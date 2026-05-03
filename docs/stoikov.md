@@ -17,7 +17,7 @@ I = \frac{bid_size}{bid_size + bid_ask}
 $$
 
 $$
-G = \left(I − 0.5\rigth) \cdot S
+G = \left I − 0.5 \rigth \cdot S
 $$
 
 $$
@@ -27,5 +27,5 @@ $$
 # Formel Avellaneda–Stoikov
 
 $$
-\delta^{pm} = \frac{\gamma \sigma^2 q){2} + \frac{1}{\gamma} \cdot \ln\!\left1 + \frac{\gamma}{\kappa}\right
+\delta^{pm} = \frac{\gamma \sigma^2 q}{2} + \frac{1}{\gamma} \cdot \ln\!\left 1 + \frac{\gamma}{\kappa} \right
 $$
