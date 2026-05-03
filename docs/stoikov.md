@@ -4,12 +4,16 @@ Den fairen Preis anhand der Formel `Mikropreis = M + G` schätzen
 
 # Aufschlüsselung der Grundformel
 
-$M = (bid_price + ask_price) / 2$
-$S = ask_price − bid_price$
-$I = bid_size / (bid_size + bid_ask)$
-$G = (I − 0.5) × S$
+$$
+M = \frac{bid_price + ask_price}{2}
+S = ask_price − bid_price
+I = \frac{bid_size}{bid_size + bid_ask}
+G = \!\left(I − 0.5\rigth) \cdot S
+$$
 
-$Mikropreis = M + G$
+$$
+Mikropreis = M + G
+$$
 
 # Formel Avellaneda–Stoikov
 
