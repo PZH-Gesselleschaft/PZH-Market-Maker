@@ -5,7 +5,7 @@
 // *** License: MIT       ***
 // **************************
 
-#include <reymm/risk/mp.h>
+#include <reymon/reymm/risk/mp.h>
 
 double reymm_mp(reymm_mp_t* p_mp) {
 

@@ -12,6 +12,26 @@ project(
   	]
 )
 
+# ************************
+# *** Global Arguments ***
+# ************************
+
+if get_option('buildtype') == 'debug'
+
+add_project_arguments(
+	'-DREYMM_DEMO=1',
+	language: [ 'c', 'cpp' ]
+)
+
+else
+
+add_project_arguments(
+	'-DREYMM_RELEASE=1',
+	language: [ 'c', 'cpp' ]
+)
+
+endif
+
 # ****************
 # *** Programs ***
 # ****************
@@ -50,7 +70,12 @@ subdir('src/kern')
 subdir('src/risk')
 subdir('src/connect')
 
-libraries = [ libreymm_utilities, libreymm_risk, libreymm_connect ]
+libraries = [
+	libreymm_utilities,
+	libreymm_risk,
+	libreymm_connect_binance,
+	libreymm_connect_kraken
+]
 
 # *******************
 # *** Executables ***
@@ -63,7 +88,9 @@ reymm_exe = executable(
 
 	link_with: libraries,
 	dependencies : dependencies,
-	include_directories: directories 
+	include_directories: directories,
+
+	install: true
 )
 
 # *******************

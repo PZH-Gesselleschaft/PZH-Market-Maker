@@ -6,7 +6,7 @@
 // **************************
 
 #include <cstdlib>
-#include <reymm/reymm.h>
+#include <reymon/reymm/reymm.h>
 
 int main(void) {
 

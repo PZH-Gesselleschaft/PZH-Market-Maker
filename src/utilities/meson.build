@@ -19,5 +19,7 @@ libreymm_utilities = shared_library(
 	FILES_UTILITIES_OPENSSL,
 
 	dependencies: dependencies,
-	include_directories: directories
+	include_directories: directories,
+
+	install: true
 )

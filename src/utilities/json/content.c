@@ -9,7 +9,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include <reymm/utilities/json.h>
+#include <reymon/reymm/utilities/json.h>
 
 char* reymm_get_json(char* msg, const char* key) {
 

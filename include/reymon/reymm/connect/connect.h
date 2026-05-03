@@ -44,6 +44,43 @@ typedef struct {
 
 } reymm_connect;
 
+// ************************
+// *** Global Variables ***
+// ************************
+
+// ************************
+// *** Common Functions ***
+// ************************
+
+extern reymm_st_connect reymm_rest_open();
+extern reymm_st_connect reymm_rest_close();
+
+extern reymm_st_connect reymm_websocket_open();
+extern reymm_st_connect reymm_websocket_close();
+
+// *************************
+// *** Binance Functions ***
+// *************************
+
+extern void             binance_initialiseren();
+extern reymm_st_connect binance_aktualisieren();
+extern void             binance_freigeben();
+
+// ************************
+// *** Kraken Functions ***
+// ************************
+
+extern void             kraken_initialiseren();
+extern reymm_st_connect kraken_aktualisieren();
+extern void             kraken_freigeben();
+
+// *************************
+// *** Connect Functions ***
+// *************************
+
+extern void binance_connect(void (binance_initialiseren)(), reymm_st_connect (binance_aktualisieren)(), void (binance_freigeben)());
+extern void kraken_connect(void (kraken_initialiseren)(),   reymm_st_connect (kraken_aktualisieren)(),  void (kraken_freigeben)());
+
 #if defined(__cplusplus)
 }
 #endif

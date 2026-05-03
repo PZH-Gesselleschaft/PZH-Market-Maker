@@ -7,5 +7,5 @@
 
 FILES_UTILITIES_JSON = files(
 	'open.c',
-	'get_content.c'
+	'content.c'
 )

@@ -5,8 +5,13 @@
 // *** License: MIT       ***
 // **************************
 
-#include <reymm/reymm.h>
+#include <reymon/reymm/reymm.h>
+
+#include "kern.hpp"
 
 void reymm_freigeben() {
 	
+	free(setting.content);
+	free(setting.exchange);
+
 }

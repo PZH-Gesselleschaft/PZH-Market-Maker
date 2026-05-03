@@ -18,11 +18,25 @@ extern "C" {
 #include "connect.h"
 #include <curl/curl.h>
 
+// **************
+// *** Macros ***
+// **************
+
+#if defined(REYMM_DEMO)
+
+#define BASE_REST_URL "https://demo-api.binance.com"
+#define BASE_WS_URL   "wss://demo-ws-api.binance.com/ws-api/v3"
+
+#elif defined(REYMM_RELEASE)
+
+#define BASE_REST_URL "https://api.binance.com/api"
+#define BASE_WS_URL   "wss://ws-api.binance.com:9443/ws-api/v3"
+
+#endif
+
 // ***************
 // *** Aliases ***
 // ***************
-
-typedef reymm_st_connect binance_st;
 
 // ******************
 // *** Structures ***
@@ -31,11 +45,6 @@ typedef reymm_st_connect binance_st;
 // *****************
 // *** Functions ***
 // *****************
-
-extern void       binance_initialiseren();
-extern binance_st binance_aktualisieren();
-extern void       binance_freigeben();
-extern void       binance_connect(void (binance_initialiseren)(), binance_st (binance_aktualisieren)(), void (binance_freigeben)());
 
 #if defined(__cplusplus)
 }

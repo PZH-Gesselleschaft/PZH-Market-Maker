@@ -9,7 +9,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 
-#include <reymm/utilities/io.h>
+#include <reymon/reymm/utilities/io.h>
 
 char* reymm_content_file(FILE* file) {
 

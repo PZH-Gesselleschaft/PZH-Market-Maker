@@ -6,7 +6,7 @@
 // **************************
 
 #include <stdlib.h>
-#include <reymm/utilities/json.h>
+#include <reymon/reymm/utilities/json.h>
 
 jsmn_parser* reymm_open_json() {
 

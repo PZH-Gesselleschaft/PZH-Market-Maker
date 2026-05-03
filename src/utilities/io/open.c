@@ -6,7 +6,7 @@
 // **************************
 
 #include <stdio.h>
-#include <reymm/utilities/io.h>
+#include <reymon/reymm/utilities/io.h>
 
 reymm_st_io reymm_open_file(const char* name, const char* mode, FILE* file) {
 

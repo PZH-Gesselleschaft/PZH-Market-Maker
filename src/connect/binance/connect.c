@@ -5,9 +5,10 @@
 // *** License: MIT       ***
 // **************************
 
-#include <reymm/connect/binance.h>
+#include <reymon/reymm/connect/connect.h>
+#include <reymon/reymm/connect/binance.h>
 
-void binance_connect(void (binance_initialiseren)(), binance_st (binance_aktualisieren)(), void (binance_freigeben)()) {
+void binance_connect(void (binance_initialiseren)(), reymm_st_connect (binance_aktualisieren)(), void (binance_freigeben)()) {
 
 	binance_initialiseren();
 	while(binance_aktualisieren() == REYMM_ST_CONNECT_SUCCESS);

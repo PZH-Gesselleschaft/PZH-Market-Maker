@@ -5,9 +5,10 @@
 // *** License: MIT       ***
 // **************************
 
-#include <reymm/connect/kraken.h>
+#include <reymon/reymm/connect/connect.h>
+#include <reymon/reymm/connect/kraken.h>
 
-void kraken_connect(void (kraken_initialiseren)(), kraken_st (kraken_aktualisieren)(), void (kraken_freigeben)()) {
+void kraken_connect(void (kraken_initialiseren)(), reymm_st_connect (kraken_aktualisieren)(), void (kraken_freigeben)()) {
 
 	kraken_initialiseren();
 	while(kraken_aktualisieren() == REYMM_ST_CONNECT_SUCCESS);

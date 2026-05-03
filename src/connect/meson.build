@@ -8,13 +8,43 @@
 subdir('binance')
 subdir('kraken')
 
-libreymm_connect = shared_library(
-	'reymm_connect',
+# *****************
+# *** Libraries ***
+# *****************
 
-	FILES_CONNECT_KRAKEN,
+libraries_connect = [
+	libreymm_utilities,
+	libreymm_risk
+]
+
+# ***************
+# *** Binance ***
+# ***************
+
+libreymm_connect_binance = shared_library(
+	'reymm_connect_binance',
+
 	FILES_CONNECT_BINANCE,
 
-	link_with: [ libreymm_utilities, libreymm_risk ],
+	link_with: libraries_connect,
 	dependencies: dependencies,
-	include_directories: directories
+	include_directories: directories,
+
+	install: true
+)
+
+# **************
+# *** Kraken ***
+# **************
+
+libreymm_connect_kraken = shared_library(
+	'reymm_connect_kraken',
+
+	FILES_CONNECT_KRAKEN,
+
+	link_with: libraries_connect,
+	dependencies: dependencies,
+	include_directories: directories,
+
+	install: true
 )

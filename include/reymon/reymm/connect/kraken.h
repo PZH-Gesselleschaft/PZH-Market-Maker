@@ -18,11 +18,26 @@ extern "C" {
 #include "connect.h"
 #include <curl/curl.h>
 
+// **************
+// *** Macros ***
+// **************
+
+#if defined(REYMM_DEMO)
+
+#define BASE_REST_URL "Not Found"
+#define BASE_WS_URL   "Not Found"
+
+#elif defined(REYMM_RELEASE)
+
+#define BASE_REST_URL "https://api.kraken.com/0/private"
+#define BASE_WS_URL   "wss://ws-auth.kraken.com/v2"
+
+#endif
+
+
 // ***************
 // *** Aliases ***
 // ***************
-
-typedef reymm_st_connect kraken_st;
 
 // ******************
 // *** Structures ***
@@ -31,11 +46,6 @@ typedef reymm_st_connect kraken_st;
 // *****************
 // *** Functions ***
 // *****************
-
-extern void      kraken_initialiseren();
-extern kraken_st kraken_aktualisieren();
-extern void      kraken_freigeben();
-extern void      kraken_connect(void (kraken_initialiseren)(), kraken_st (kraken_aktualisieren)(), void (kraken_freigeben)());
 
 #if defined(__cplusplus)
 }

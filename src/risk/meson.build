@@ -16,5 +16,7 @@ libreymm_risk = shared_library(
 
 	link_with: libreymm_utilities,
 	dependencies: dependencies,
-	include_directories: directories
+	include_directories: directories,
+
+	install: true
 )
