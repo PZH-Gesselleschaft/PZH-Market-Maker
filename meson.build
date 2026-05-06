@@ -42,12 +42,16 @@ gdb = find_program('gdb')
 # *** Dependencies ***
 # ********************
 
-curl    = dependency('libcurl')
-openssl = dependency('openssl')
+json       = dependency('yyjson')
+crypto     = dependency('libcrypto')
+openssl    = dependency('openssl')
+websockets = dependency('libwebsockets')
 
 dependencies = [
-	curl,
-	openssl
+	json,
+	crypto,
+	openssl,
+	websockets
 ]
 
 # ***************
@@ -56,8 +60,7 @@ dependencies = [
 
 directories = include_directories(
 	'include',
-	'include/reymon',
-	'include/reymon/reymm'
+	'include/reymon'
 )
 
 # **********************
@@ -89,6 +92,8 @@ reymm_exe = executable(
 	link_with: libraries,
 	dependencies : dependencies,
 	include_directories: directories,
+
+	link_args: [ '-lm' ],
 
 	install: true
 )

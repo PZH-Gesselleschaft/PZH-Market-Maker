@@ -8,11 +8,15 @@
 #include <stdio.h>
 #include <reymon/reymm/utilities/io.h>
 
-reymm_st_io reymm_open_file(const char* name, const char* mode, FILE* file) {
+reymm_st_io reymm_open_file(const char* name, const char* mode, FILE** file) {
 
-	file = fopen(name, mode);
+	*file = fopen(name, mode);
 
-	if (!file) return REYMM_ST_IO_OPEN_FAILURE;
+	if (!*file) {
+		printf("%p\n", (void*) *file);
+		*file = NULL;
+		return REYMM_ST_IO_OPEN_FAILURE;
+	}
 
 	return REYMM_ST_IO_OPEN_SUCCESS;
 }

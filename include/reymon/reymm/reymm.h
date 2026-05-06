@@ -16,12 +16,16 @@ extern "C" {
 // *****************
 
 #include <stdio.h>
+#include <stdbool.h>
 
+#include <yyjson.h>
 #include <curl/curl.h>
 
 #include <reymon/reymm/connect/connect.h>
 #include <reymon/reymm/risk/mp.h>
 #include <reymon/reymm/utilities/types.h>
+#include <reymon/reymm/utilities/ssl.h>
+#include <reymon/reymm/utilities/common.h>
 #include <reymon/reymm/utilities/io.h>
 #include <reymon/reymm/utilities/json.h>
 
@@ -36,22 +40,6 @@ extern "C" {
 // ******************
 // *** Structures ***
 // ******************
-
-typedef struct {
-
-	FILE* file;
-	char* content;
-
-	char* exchange;
-	char* symbol;
-	char* order_type;
-	size_t bid;
-	size_t ask;
-	size_t size;
-	char* apikey;
-	char* apisecret;
-
-} reymm_setting;
 
 // *****************
 // *** Functions ***

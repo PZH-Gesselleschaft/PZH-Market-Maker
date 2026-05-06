@@ -5,7 +5,8 @@
 # *** License: MIT       ***
 # **************************
 
-FILES_UTILITIES_CURL = files(
-	'websocket_close.c',
-	'websocket_open.c'
+FILES_CONNECT_KRAKEN_MAIN = files(
+	'initialiseren.c',
+	'aktualisieren.c',
+	'freigeben.c'
 )

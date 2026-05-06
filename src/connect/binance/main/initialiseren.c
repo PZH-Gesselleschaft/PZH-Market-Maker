@@ -5,12 +5,13 @@
 // *** License: MIT       ***
 // **************************
 
+#include <reymon/reymm/reymm.h>
 #include <reymon/reymm/connect/connect.h>
 #include <reymon/reymm/connect/binance.h>
 
-void binance_connect(void (binance_initialiseren)(), reymm_st_connect (binance_aktualisieren)(), void (binance_freigeben)()) {
+reymm_st_connect binance_initialiseren() {
 
-	binance_initialiseren();
-	while(binance_aktualisieren() == REYMM_ST_CONNECT_SUCCESS);
-	binance_freigeben();
+	reymm_read_json_file();
+
+	return reymm_websocket_open();
 }

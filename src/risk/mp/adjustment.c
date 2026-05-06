@@ -7,7 +7,7 @@
 
 #include <reymon/reymm/risk/mp.h>
 
-double reymm_adjustment(reymm_mp_t* mp) {
+double reymm_adjustment(reymm_stoikov* mp) {
 
 	/**
 	 * Den Compiler so lenken,
@@ -16,7 +16,7 @@ double reymm_adjustment(reymm_mp_t* mp) {
 	*/
 
 	double I = reymm_imbalance(mp);
-	double S = reymm_spread(mp);
+	double S = reymm_market_spread(mp);
 
 	double adjustment = I - 0.5;
 	adjustment = adjustment * S;

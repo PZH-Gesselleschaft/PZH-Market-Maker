@@ -8,12 +8,12 @@
 #include <stdio.h>
 #include <reymon/reymm/utilities/io.h>
 
-reymm_st_io reymm_close_file(FILE* file) {
+reymm_st_io reymm_close_file(FILE** file) {
 
-	if (!file) return REYMM_ST_IO_CLOSE_FAILURE;
+	if (!*file) return REYMM_ST_IO_CLOSE_FAILURE;
 
-	free(file);
-	file = NULL;
+	free(*file);
+	*file = NULL;
 
 	return REYMM_ST_IO_CLOSE_SUCCESS;
 }

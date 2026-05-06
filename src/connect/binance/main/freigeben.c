@@ -5,9 +5,15 @@
 // *** License: MIT       ***
 // **************************
 
+#include <stdlib.h>
+
 #include <reymon/reymm/connect/connect.h>
+#include <reymon/reymm/utilities/common.h>
+
 #include <reymon/reymm/connect/binance.h>
 
-void binance_initialiseren() {
+void binance_freigeben() {
+
+	reymm_websocket_close();
 
 }

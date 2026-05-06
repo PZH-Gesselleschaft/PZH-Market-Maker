@@ -7,10 +7,10 @@
 
 FILES_KERN = files(
 
-	'reymm.cpp',
-	'kern.cpp',
-	'initialiseren.cpp',
-	'aktualisieren.cpp',
-	'freigeben.cpp',
+	'reymm.c',
+	'kern.c',
+	'initialiseren.c',
+	'aktualisieren.c',
+	'freigeben.c',
 
 )

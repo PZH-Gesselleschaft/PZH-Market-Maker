@@ -5,9 +5,12 @@
 // *** License: MIT       ***
 // **************************
 
-#include <reymon/reymm/connect/connect.h>
-#include <reymon/reymm/connect/binance.h>
+#include <reymon/reymm/reymm.h>
 
-void binance_freigeben() {
+void reymm_freigeben() {
+
+	free(setting.content);
+	yyjson_doc_free(setting.doc);
+	reymm_io(REYMM_TYPE_IO_CLOSE, "NOTHING", "NOTHING", &setting.file);
 
 }

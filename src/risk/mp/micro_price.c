@@ -7,7 +7,7 @@
 
 #include <reymon/reymm/risk/mp.h>
 
-double reymm_mp(reymm_mp_t* p_mp) {
+double reymm_mp(reymm_stoikov* p_mp) {
 
 	/**
 	 * Den Compiler so lenken,

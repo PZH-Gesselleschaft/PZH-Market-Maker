@@ -15,7 +15,14 @@ extern "C" {
 // *** Libraries ***
 // *****************
 
-#include <curl/curl.h>
+#include <stddef.h>
+#include <libwebsockets.h>
+
+// **************
+// *** Macros ***
+// **************
+
+#define REYMM_BUFFER_SIZE 0x10000
 
 // ***************
 // *** Aliases ***
@@ -28,7 +35,7 @@ extern "C" {
 typedef enum {
 
 	REYMM_ST_CONNECT_SUCCESS = (0 << 0) ^ 3,
-	REYMM_ST_CONNECT_FAILURE = (0 << 1) ^ 3
+	REYMM_ST_CONNECT_FAILURE = (1 << 1) ^ 3
 
 } reymm_st_connect;
 
@@ -38,15 +45,26 @@ typedef enum {
 
 typedef struct {
 
-	CURL* curl;
-	char* ws_url;
-	reymm_st_connect state;
+	struct lws_context_creation_info context_creation;
+ 	struct lws_context*              context;
+
+} reymm_context;
+
+typedef struct {
+
+	struct lws* wsi;
+	struct lws_client_connect_info client_info;
 
 } reymm_connect;
 
 // ************************
 // *** Global Variables ***
 // ************************
+
+extern reymm_connect stream;
+extern reymm_connect orders;
+extern reymm_context websocket;
+extern struct lws_protocols protocols[2];
 
 // ************************
 // *** Common Functions ***
@@ -58,11 +76,13 @@ extern reymm_st_connect reymm_rest_close();
 extern reymm_st_connect reymm_websocket_open();
 extern reymm_st_connect reymm_websocket_close();
 
+extern int reymm_websocket_callback(struct lws*, enum lws_callback_reasons, void*, void*, size_t);
+
 // *************************
 // *** Binance Functions ***
 // *************************
 
-extern void             binance_initialiseren();
+extern reymm_st_connect binance_initialiseren();
 extern reymm_st_connect binance_aktualisieren();
 extern void             binance_freigeben();
 
@@ -78,8 +98,8 @@ extern void             kraken_freigeben();
 // *** Connect Functions ***
 // *************************
 
-extern void binance_connect(void (binance_initialiseren)(), reymm_st_connect (binance_aktualisieren)(), void (binance_freigeben)());
-extern void kraken_connect(void (kraken_initialiseren)(),   reymm_st_connect (kraken_aktualisieren)(),  void (kraken_freigeben)());
+extern void binance_connect(reymm_st_connect (*)(), reymm_st_connect (*)(), void (*)());
+extern void kraken_connect (void (*)(),  reymm_st_connect (*)(),  void (*)());
 
 #if defined(__cplusplus)
 }

@@ -7,7 +7,7 @@
 
 #include <reymon/reymm/risk/mp.h>
 
-double reymm_spread(reymm_mp_t* mp) {
+double reymm_market_spread(reymm_stoikov* mp) {
 
 	/**
 	 * Den Compiler so lenken,

@@ -8,6 +8,7 @@
 FILES_UTILITIES_IO = files(
 	'open.c',
 	'close.c',
+	'length.c',
 	'content.c',
 	'reymm_io.c'
 )

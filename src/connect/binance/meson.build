@@ -5,9 +5,6 @@
 # *** License: MIT       ***
 # **************************
 
-FILES_CONNECT_BINANCE = files(
-	'connect.c',
-	'initialiseren.c',
-	'aktualisieren.c',
-	'freigeben.c'
-)
+subdir('common')
+subdir('main')
+subdir('web')

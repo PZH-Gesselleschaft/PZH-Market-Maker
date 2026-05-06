@@ -7,11 +7,10 @@
 
 #include <reymon/reymm/reymm.h>
 
-#include "kern.hpp"
-
-void reymm_freigeben() {
+reymm_st_connect reymm_websocket_close() {
 	
-	free(setting.content);
-	free(setting.exchange);
+	lws_cancel_service(websocket.context);
+	lws_context_destroy(websocket.context);
 
+	return REYMM_ST_CONNECT_SUCCESS;
 }

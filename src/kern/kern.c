@@ -5,16 +5,12 @@
 // *** License: MIT       ***
 // **************************
 
-#include <cstdlib>
 #include <reymon/reymm/reymm.h>
 
-int main(void) {
+void reymm_kern(void (reymm_initialiseren)(), reymm_st_connect (reymm_aktualisieren)(), void (reymm_freigeben)()) {
 
-	reymm_kern(
-		reymm_initialiseren,
-		reymm_aktualisieren,
-		reymm_freigeben
-	);
-	
-	return EXIT_SUCCESS;
+	reymm_initialiseren();
+	reymm_aktualisieren();
+	reymm_freigeben();
+
 }

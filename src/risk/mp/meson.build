@@ -8,7 +8,14 @@
 FILES_RISK_MP = files(
 	'adjustment.c',
 	'imbalance.c',
+	'kappa.c',
+	'market_spread.c',
 	'micro_price.c',
 	'mid_price.c',
-	'spread.c'
+	'optimal_spread.c',
+	'quotes.c',
+	'reservation_price.c',
+	'sigma.c',
+	'time_remaining.c',
+	'volume.c'
 )

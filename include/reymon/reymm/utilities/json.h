@@ -21,14 +21,12 @@ extern "C" {
 // *** Libraries ***
 // *****************
 
-#include <jsmn.h>
-#include <curl/curl.h>
+#include <yyjson.h>
+#include <libwebsockets.h>
 
 // **************
 // *** Macros ***
 // **************
-
-#define REYMM_TOKEN_SIZE 0x1000
 
 // ***************
 // *** Aliases ***
@@ -46,8 +44,7 @@ extern "C" {
 // *** Functions ***
 // *****************
 
-extern jsmn_parser* reymm_open_json();
-extern char*        reymm_get_json(char* msg, const char* key);
+extern void reymm_read_json_file();
 
 #if defined(__cplusplus)
 }

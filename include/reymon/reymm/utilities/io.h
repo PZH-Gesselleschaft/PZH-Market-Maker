@@ -60,10 +60,11 @@ typedef enum {
 // *** Functions ***
 // *****************
 
-extern reymm_st_io reymm_io(reymm_type, const char*, const char*, FILE*);
-extern reymm_st_io reymm_open_file(const char*, const char*, FILE*);
-extern reymm_st_io reymm_close_file(FILE*);
+extern reymm_st_io reymm_io(reymm_type, const char*, const char*, FILE**);
+extern reymm_st_io reymm_open_file(const char*, const char*, FILE**);
+extern reymm_st_io reymm_close_file(FILE**);
 extern char*       reymm_content_file(FILE*);
+extern size_t      reymm_length_file(FILE*);
 
 #if defined(__cplusplus)
 }
