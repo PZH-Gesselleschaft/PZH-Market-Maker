@@ -1,0 +1,13 @@
+{	
+	"symbol": "", // Symbol to operate
+
+	"bid":   0, // Number of orders on bid
+	"ask":   0, // Number of orders on ask
+	"size":  0, // Order Sizs
+	"limit": 0, // Inventory Limit
+	
+	"gamma": 0, // Risk Aversión
+	
+	"apikey":    "", // Public Apikey
+	"apisecret": ""  // Private Apikey
+}

@@ -1,0 +1,64 @@
+% ********************************
+% *** Author: PZH Gesellschaft ***
+% *** Date: 13. Mai. 2026      ***
+% *** Update 13. Mai. 2026     ***
+% *** License: AGPL-3-or-later ***
+% ********************************
+
+\documentclass[11pt]{article}
+
+% ****************
+% *** Packages ***
+% ****************
+
+\usepackage [utf8] {inputenc}
+\usepackage {amsmath, amssymb, amsthm}
+
+
+% ****************
+% *** Document ***
+% ****************
+
+\begin{document}
+
+\title{Dokumentation zum Stoików-Algorithmus}
+\author{PZH Gesellschaft}
+\maketitle
+
+% *******************
+% *** Section one ***
+% *******************
+
+\section{Anwendung der Formel}
+
+Den fairen Preis anhand der Formel $Mikropreis = M + G$ schätzen
+
+\section{Aufschlüsselung der Grundformel}
+
+\subsection{Terminologie}
+
+$bid-price = bid^p$
+
+$ask-price = ask^p$
+
+$bid-size  = bid^s$
+
+$bid-size  = ask^s$
+
+\subsection{Formeln}
+
+$M = \frac{bid^p + ask^p}{2}$
+
+$S = ask^p - bid^p$
+
+$I = \frac{bid^s}{bid^s + ask^s}$
+
+$G = \left(I - 0.5\right) \cdot S$
+
+$Mikropreis = M + G$
+
+\subsection{Formel Avellaneda–Stoikov}
+
+$\delta^{\pm} = \frac{\gamma \sigma^2 T}{2} + \frac{1}{\gamma} \cdot \ln\left(1 + \frac{\gamma}{\kappa}\right)$
+
+\end{document}

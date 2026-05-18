@@ -1,0 +1,14 @@
+body {
+
+	color: #b059b1;
+	background: #313131;
+
+}
+
+center #main-title {
+	color: #af5f1f;
+}
+
+pre code.json {
+	color: #afaf00;
+}

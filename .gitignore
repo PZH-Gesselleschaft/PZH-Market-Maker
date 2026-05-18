@@ -1,0 +1,14 @@
+# *************
+# *** Files ***
+# *************
+
+*.db
+config/*.json
+
+# ***************
+# *** Folders ***
+# ***************
+
+include/reymon
+__pycache__
+*.egg-info

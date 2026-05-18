@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<base href="/PZH-Market-Maker/">
+
+	<title>PZH Market Maker</title>
+	
+	<link rel="icon" href="images/pzh_gesellschaft.png" type="image/png">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+	<select onchange="window.location.href='?lang=' + this.value">
+		<option value="es">Español</option>
+		<option value="en">English</option>
+		<option value="de">Deutsch</option>
+	</select>
+
+<!-- Apartado principal -->
+
+	<center>
+		<h1 id="main-title">PZH Market Maker</h1>
+	</center>
+
+<!-- Muestra el formato de el archivo setting.json -->
+	<h2 class="setting">Setting format</h2>
+
+	<pre> <code class="json" id="setting_format"></code> </pre>
+
+<!-- Muestra el formato que deben de seguir los archivos de los exchange -->
+
+	<h2>Exchange json format</h2>
+
+	<pre> <code class="json" id="exchange_format"></code> </pre>
+
+<!-- Documentación -->
+
+	<h2>Documentación</h2>
+	<embed src="pdf/es/stoikov.pdf" type="application/pdf" width="100%" height="800px">
+
+<!-- Scripts -->
+
+	<script>
+		const params = new URLSearchParams(window.location.search);
+		const lang = params.get('lang') || 'es';
+		if (lang != 'es') {
+    		window.location.href = '/PZH-Market-Maker/index.html';
+		} else {
+
+		}
+	</script>
+	
+	<script src="js/main.js"></script>
+
+</body>
+</html>

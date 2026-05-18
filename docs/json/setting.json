@@ -1,0 +1,8 @@
+{	
+	"exchange": [  // Exchanges to operate
+		"binance",
+		"kraken"
+	],
+
+	"threads": 2 // one thread for exchange
+}
